@@ -79,11 +79,11 @@ public:
 	void Compute(uint8_t dir);
 	void DCRemoval();
 	double MajorPeak();
+	double MagnitudeMajorPeak();
 	void Windowing(uint8_t windowType, uint8_t dir);
 
 	void MajorPeak(double *f, double *v);
 	void MajorPeak(double *vD, uint16_t samples, double samplingFrequency, double *f, double *v);
-
 
 private:
 	/* Variables */
@@ -92,6 +92,8 @@ private:
 	double *_vReal;
 	double *_vImag;
 	uint8_t _power;
+	uint16_t _IndexOfMaxY;
+	double _delta;
 	/* Functions */
 	void Swap(double *x, double *y);
 };
